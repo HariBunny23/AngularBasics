@@ -1,0 +1,134 @@
+<!-- <p>Hello John</p> 
+
+<hr>
+
+<h1>How are you</h1> -->
+
+<!-- data binding --  we are trying to make relationship between ts and html-->
+<!-- /* -------------string interpolation ********************
+
+If you want to binding data(string) into the html from ts file then you can use string interpolation  
+
+syntax - {{}}
+-->
+
+
+<p>{{ name }}</p>
+
+<p>{{ customerId }}</p>
+
+<p>{{ getCustomerLocation() }}</p>
+
+<!-- <--- binding data with property called property databinding --
+   eg:
+   <input type="text" disabled>
+   here 2 properties are there - type and disabled
+
+   <input id="type1" type="text" disabled>
+   3 properties id,type and disabled
+  syntax -- [<property>]
+    > -->
+
+    <input id="textID" type="text" [value] = "job" >
+
+    <input [type]="inputType">
+
+
+
+    <!-- event binding 
+    
+    binding data with event known as event binding
+ 
+    syntax : (<event>)
+
+      <!-- keyup, keydown , mouse over   -->
+
+<!-- --> 
+
+
+<button (click) = "evtClick()" > Click </button>
+
+
+<!-- <br> -->
+
+
+<!-- Q)Can we implement property and event data binding to single element
+
+ans)Yes-->
+
+<!-- I want to print whatever value typed from keyboard -->
+<input type="text"
+       (keyup) = "evtKeyUp($event)"
+       [value] = " officeName " >
+
+
+
+
+
+<hr>
+
+
+
+<!-- there is drawback with keypress event when you type first character it won't print in console
+
+we have to use keyup-->
+
+
+
+
+
+<!-- directive --if we want to add or modify existing behaviour then use directive
+--angula directives are defined as class that can add new behaviour to elements in the tempate or modify existing behaviour(original defintion)
+many directives are there in angular
+1.ngModel
+
+if we want to use then need to register in app.module.ts
+
+
+here value is DOM element in angular we use ngModel instead of vale-->
+
+<!-- note :ngModel is similar to property databinding -->
+
+<input id="streetname1id" type="text" [ngModel] = "streetName_1" >
+
+
+
+<hr>
+
+
+
+<!-- ngModelChange - will triggers when you change ngmodel value -->
+<!-- Note:ngModelChange is similar to event data binding -->
+<input id="streetname2id" type="text"
+[ngModel] = "streetName_2"
+(ngModelChange) = "getStreetNameDetails($event)">
+
+<hr>
+
+<!-- case study
+text box --text
+button click if you click on  btn then text need to print on console -->
+<!-- Local reference variable -->
+
+<!-- by using local reference variable we can capture element -->
+<input id="empFullNameID" type="text" #refEmpFullName>
+
+
+<button (click) = "getFullNameDetail(refEmpFullName)" >Click</button>
+
+
+<hr>
+
+
+
+<!-- two way databinding =property databinding + event databinding
+{{}} -string interpolation
+[] - property databinding
+() - event databinding
+[()] - twoway databinding
+
+by using ngModel directive we can achieve two way databinding-->
+
+<input type="text" [(ngModel)] = "schoolName" />
+
+<p>{{schoolName}}</p>

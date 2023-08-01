@@ -1,0 +1,25 @@
+
+
+<p style="background-color: red;">customers</p>
+
+<!-- directives - this are used to change element bahaviour dynamically
+ngStyle,ngClass --directives -->
+<!-- by using property databinding [] we can style element using ngStyle directive -->
+<!-- ngStyle  syntax is similar to object in JS-->
+
+
+<!-- i am changing paragraph element behaviour with help of ngStyle directive -->
+
+
+<p [ngStyle]= "{backgroundColor:blueColor}
+">blue color customers
+</p>
+
+
+
+<!-- ngClass -->
+
+<p 
+  [ngClass]="{online : status == 'online'}">
+  customers are in {{status}} 
+</p>
