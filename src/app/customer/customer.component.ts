@@ -99,6 +99,55 @@ getFullNameDetail(emp:HTMLInputElement){
 schoolName = "oxford";
 
 
+
+
+
+
+applyYellowcolor = true;
+
+
+
+
+
+
+
+
+isVisiable = true;
+
+
+
+
+
+
+isContent = false;
+
+
+
+
+
+
+
+
+isIfCondition = false;
+
+
+
+
+
+/* prepare the array
+array --> list of items
+
+array -->prepare list items what do you want*/
+
+
+
+numbers = ["one","two","three","four","five"];
+
+
+
+
+
+
 }
 
 

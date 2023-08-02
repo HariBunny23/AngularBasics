@@ -1,134 +1,125 @@
-<!-- <p>Hello John</p> 
+<!-- <div class="container" style="margin: 10px; padding: 50px; background-color: lightyellow;">
+  <h3>Customers Registration page(customer component)</h3>
+  <form>
+      <div class="form-group" style="margin: 10px;">
+        <input class="form-control col-md-7" placeholder="UserName" type="text" />
+      </div>
+      <div class="form-group"style="margin: 10px;">
+        <input class="form-control col-md-7" placeholder="Password" type="text" />
+      </div>
+      <div class="form-group" style="margin: 10px;">
+         <input class="form-control col-md-7"  placeholder="Location" type="text" />
+      </div>
+  </form>
 
-<hr>
-
-<h1>How are you</h1> -->
-
-<!-- data binding --  we are trying to make relationship between ts and html-->
-<!-- /* -------------string interpolation ********************
-
-If you want to binding data(string) into the html from ts file then you can use string interpolation  
-
-syntax - {{}}
--->
-
-
-<p>{{ name }}</p>
-
-<p>{{ customerId }}</p>
-
-<p>{{ getCustomerLocation() }}</p>
-
-<!-- <--- binding data with property called property databinding --
-   eg:
-   <input type="text" disabled>
-   here 2 properties are there - type and disabled
-
-   <input id="type1" type="text" disabled>
-   3 properties id,type and disabled
-  syntax -- [<property>]
-    > -->
-
-    <input id="textID" type="text" [value] = "job" >
-
-    <input [type]="inputType">
+</div> -->
 
 
 
-    <!-- event binding 
-    
-    binding data with event known as event binding
- 
-    syntax : (<event>)
+<!-- directives
 
-      <!-- keyup, keydown , mouse over   -->
-
-<!-- --> 
+collection of instructions in DOM
+1.bu using directive we can change behaviour or structure of element based on the condition.
+2.directive is a function that executes whenever angular compiler finds in DOM-->
 
 
-<button (click) = "evtClick()" > Click </button>
-
-
-<!-- <br> -->
-
-
-<!-- Q)Can we implement property and event data binding to single element
-
-ans)Yes-->
-
-<!-- I want to print whatever value typed from keyboard -->
-<input type="text"
-       (keyup) = "evtKeyUp($event)"
-       [value] = " officeName " >
+<p style="background-color: yellow;">Hello World</p>
 
 
 
 
 
-<hr>
+
+<!-- same we are doing using directive -->
+
+<p [ngStyle] ="{ 'backgroundColor' : applyYellowcolor == true 
+? 'yellow' : 'red' } ">
+  Hello paragraph</p>
 
 
 
-<!-- there is drawback with keypress event when you type first character it won't print in console
-
-we have to use keyup-->
+<p style="visibility: hidden;">Hey I am visible.</p>
 
 
+<p [ngStyle] ="{ 'visibility' : isVisiable == true 
+? 'visible' : 'hidden' } ">
+  Hey I am in hidden position</p>
+
+
+<!-- class and ngClass -->
+
+<!-- 
+<p class="content">I am the content</p>
+
+
+<p class="nocontent">I am the nocontent</p> -->
+
+
+<!-- ngClass apply the class based on the condition it's a attribute dirctive -->
+
+<p [ngClass] = "isContent == true ? 'content' : 'nocontent'">kadapa</p>
+
+
+<!-- ngIf directive  - it's a strctural directive  -->
+<!-- if(true){
+
+} 
+else
+{
+
+}
+
+by using loaclreference variable we can execute else block-->
+
+<!-- ng-template 
+template which can renders based on condition in DOM.if condition is true then it can renders or cannot.-->
+
+
+<p *ngIf = "isIfCondition else help">Hey I am visible by ngif directive</p>
+
+<ng-template #help>
+<p>Hey I am not visible because ifcondition is false</p>
+</ng-template>
 
 
 
-<!-- directive --if we want to add or modify existing behaviour then use directive
---angula directives are defined as class that can add new behaviour to elements in the tempate or modify existing behaviour(original defintion)
-many directives are there in angular
-1.ngModel
-
-if we want to use then need to register in app.module.ts
-
-
-here value is DOM element in angular we use ngModel instead of vale-->
-
-<!-- note :ngModel is similar to property databinding -->
-
-<input id="streetname1id" type="text" [ngModel] = "streetName_1" >
 
 
 
-<hr>
 
 
-
-<!-- ngModelChange - will triggers when you change ngmodel value -->
-<!-- Note:ngModelChange is similar to event data binding -->
-<input id="streetname2id" type="text"
-[ngModel] = "streetName_2"
-(ngModelChange) = "getStreetNameDetails($event)">
-
-<hr>
-
-<!-- case study
-text box --text
-button click if you click on  btn then text need to print on console -->
-<!-- Local reference variable -->
-
-<!-- by using local reference variable we can capture element -->
-<input id="empFullNameID" type="text" #refEmpFullName>
-
-
-<button (click) = "getFullNameDetail(refEmpFullName)" >Click</button>
+<ul>
+  <li>one</li>
+  <li>two</li>
+  <li>three</li>
+  <li>four</li>
+  <li>five</li>
+  <li>six</li>
+  <li>seven</li>
+  <li>eight</li>
+</ul>
 
 
 <hr>
 
+<!-- ngFor (we can print the list of items)
 
 
-<!-- two way databinding =property databinding + event databinding
-{{}} -string interpolation
-[] - property databinding
-() - event databinding
-[()] - twoway databinding
+syntax <-- *ngFor = "let ______ of __________"-->
 
-by using ngModel directive we can achieve two way databinding-->
 
-<input type="text" [(ngModel)] = "schoolName" />
+<ul>
+  <li *ngFor = "let number of numbers ">{{number}}</li>
+</ul>
 
-<p>{{schoolName}}</p>
+
+
+<!-- ng-template -->
+
+<ng-template>
+  <p>hello INDIA</p>
+</ng-template>
+
+<!-- comment for above ng-template
+
+ng-template won't render above code it renders only when function executes or trigger-->

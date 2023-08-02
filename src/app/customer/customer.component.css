@@ -1,7 +1,23 @@
-p {
+/* p {
     color:red
 } 
 h1 { 
     background-color : orange;
     font-style: italic;
+} */
+
+/* here content is class name of component.css */
+.content{
+    font-size: 30px;
+    background-color: lightcoral;
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+/* here nocontent is class name of component.css */
+
+
+.nocontent{
+    font-size: 20px;
 }
