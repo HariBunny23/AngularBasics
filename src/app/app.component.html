@@ -1,9 +1,17 @@
 <div style="margin: 10px; padding: 50px; background-color: lightsalmon;">
-<app-customer></app-customer>
+<h1>App component</h1>
+   
 
+
+<!-- app customer and app customers are the child component of app component -->
 <!-- <br> -->
+
 <!-- <app-employee></app-employee> -->
-<!-- <app-customers></app-customers> --> 
+
+<!-- one point i.e property data binding for declaring that we are using @input decorator -->
+<app-customer  [txtworld]  = "sampletext"  ></app-customer>
+
+<app-customers></app-customers>
 
 
 </div>

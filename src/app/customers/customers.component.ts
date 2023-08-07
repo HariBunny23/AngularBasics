@@ -9,16 +9,4 @@ export class CustomersComponent {
 
 
 
-
-blueColor:string = "blue";
-
-
-
-
-
-
-
-
-status = "offline";
-
 }

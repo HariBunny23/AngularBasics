@@ -1,125 +1,18 @@
-<!-- <div class="container" style="margin: 10px; padding: 50px; background-color: lightyellow;">
-  <h3>Customers Registration page(customer component)</h3>
+<div class="container" style="margin:30px;padding:50px;background-color: lightyellow;">
+  <h3>Cusomer Registration page.(Customer component)</h3>
   <form>
-      <div class="form-group" style="margin: 10px;">
-        <input class="form-control col-md-7" placeholder="UserName" type="text" />
+      <div class="form-group" style="margin:10px">
+       <input class="form-control col-md-7"  placeholder="Customer Name" type="text" #txtCustomerName />
       </div>
-      <div class="form-group"style="margin: 10px;">
-        <input class="form-control col-md-7" placeholder="Password" type="text" />
-      </div>
-      <div class="form-group" style="margin: 10px;">
-         <input class="form-control col-md-7"  placeholder="Location" type="text" />
-      </div>
+      <div class="form-group" style="margin:10px">
+        <input class="form-control col-md-7" placeholder="Password" type="text" #txPassword />
+       </div>
+       <div class="form-group" style="margin:10px">
+        <input class="form-control col-md-7" placeholder="Location" type="text" #txtLocation />
+       </div>
   </form>
+  <div class="form-group">
+    <button class="btn btn-primary" (click) = "evtclick()">Click</button>
+  </div>
+</div>
 
-</div> -->
-
-
-
-<!-- directives
-
-collection of instructions in DOM
-1.bu using directive we can change behaviour or structure of element based on the condition.
-2.directive is a function that executes whenever angular compiler finds in DOM-->
-
-
-<p style="background-color: yellow;">Hello World</p>
-
-
-
-
-
-
-<!-- same we are doing using directive -->
-
-<p [ngStyle] ="{ 'backgroundColor' : applyYellowcolor == true 
-? 'yellow' : 'red' } ">
-  Hello paragraph</p>
-
-
-
-<p style="visibility: hidden;">Hey I am visible.</p>
-
-
-<p [ngStyle] ="{ 'visibility' : isVisiable == true 
-? 'visible' : 'hidden' } ">
-  Hey I am in hidden position</p>
-
-
-<!-- class and ngClass -->
-
-<!-- 
-<p class="content">I am the content</p>
-
-
-<p class="nocontent">I am the nocontent</p> -->
-
-
-<!-- ngClass apply the class based on the condition it's a attribute dirctive -->
-
-<p [ngClass] = "isContent == true ? 'content' : 'nocontent'">kadapa</p>
-
-
-<!-- ngIf directive  - it's a strctural directive  -->
-<!-- if(true){
-
-} 
-else
-{
-
-}
-
-by using loaclreference variable we can execute else block-->
-
-<!-- ng-template 
-template which can renders based on condition in DOM.if condition is true then it can renders or cannot.-->
-
-
-<p *ngIf = "isIfCondition else help">Hey I am visible by ngif directive</p>
-
-<ng-template #help>
-<p>Hey I am not visible because ifcondition is false</p>
-</ng-template>
-
-
-
-
-
-
-
-
-<ul>
-  <li>one</li>
-  <li>two</li>
-  <li>three</li>
-  <li>four</li>
-  <li>five</li>
-  <li>six</li>
-  <li>seven</li>
-  <li>eight</li>
-</ul>
-
-
-<hr>
-
-<!-- ngFor (we can print the list of items)
-
-
-syntax <-- *ngFor = "let ______ of __________"-->
-
-
-<ul>
-  <li *ngFor = "let number of numbers ">{{number}}</li>
-</ul>
-
-
-
-<!-- ng-template -->
-
-<ng-template>
-  <p>hello INDIA</p>
-</ng-template>
-
-<!-- comment for above ng-template
-
-ng-template won't render above code it renders only when function executes or trigger-->

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component,ElementRef,ViewChild,Input } from "@angular/core";
 
 
 // @Component({
@@ -18,134 +18,42 @@ import { Component } from "@angular/core";
 
 export class CustomerComponent{
 
-    name = "Hello John";
+   // 1.txtcustomerName is the local reference which ref the input element
 
-    customerId = "1";
+//just try to import the txtcustomername(child) from customer view
 
-    getCustomerLocation(){
-        return "London";
+@ViewChild('txtCustomerName') _txtCustomerName : ElementRef;
+@ViewChild('txPassword') _txPassword : ElementRef;
+@ViewChild('txtLocation') _txtLocation : ElementRef;
+
+
+@Input() txtworld : any;
+
+
+
+evtclick(){
+    //txtcustomerName I want to pick  from text box
+    console.log(this._txtCustomerName.nativeElement.value);
+    console.log(this._txPassword.nativeElement.value);
+    console.log(this._txtLocation.nativeElement.value);
+
+    console.log("value from app component is:",this.txtworld);
+
+    let customerInfo = {
+        name         : this._txtCustomerName.nativeElement.value,
+        password     : this._txPassword.nativeElement.value,
+        location     :this._txtLocation.nativeElement.value
     }
 
-
-    job = "Senior Software Engineer";
-
-
-    inputType = "checkbox";
-
-
-
-    evtClick(){
-        console.log("you have clicked");
-    }
-
-
-
-    evtKeyUp(event:any){
-        //console.log("key pressed");
-
-
-        console.log("the value from the text box is",event.target.value);
-    }
-    
-
-
-    officeName = "Infosys";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    streetName_1 = "oxford street";
-
-//===================================================//
-
-
-
-streetName_2 = "Brick Lane";
-
-getStreetNameDetails(evtdetails:any){
-    console.log(evtdetails);
-}
-
-
-
-//=============================//
-
-//here we have to use HTMLinputelement instead of any type why beacuse for any it won't have any methods and in HTMLInputElement it have methods
-
-
-getFullNameDetail(emp:HTMLInputElement){
-    console.log(emp.value); 
+    //console.log("clicked");
+    console.log(customerInfo);
 }
 
 
 
 
-
-//=============================//
-
-
-
-
-schoolName = "oxford";
-
-
-
-
-
-
-applyYellowcolor = true;
-
-
-
-
-
-
-
-
-isVisiable = true;
-
-
-
-
-
-
-isContent = false;
-
-
-
-
-
-
-
-
-isIfCondition = false;
-
-
-
-
-
-/* prepare the array
-array --> list of items
-
-array -->prepare list items what do you want*/
-
-
-
-numbers = ["one","two","three","four","five"];
-
-
-
-
+//I want to pass username , password and location to customer details page
+//I want to ca[ture values of CN,pw,Loc when I fired/executed button
 
 
 }
