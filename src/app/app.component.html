@@ -1,6 +1,10 @@
 <div style="margin: 10px; padding: 50px; background-color: lightsalmon;">
 <h1>App component</h1>
    
+ <!-- {name: 'Hari', password: 'gahhshsh', location: 'Hyd'} -->
+{{customerDetails.name}}
+{{customerDetails.password}}
+{{customerDetails.location}}
 
 
 <!-- app customer and app customers are the child component of app component -->
@@ -9,9 +13,19 @@
 <!-- <app-employee></app-employee> -->
 
 <!-- one point i.e property data binding for declaring that we are using @input decorator -->
-<app-customer  [txtworld]  = "sampletext"  ></app-customer>
+<app-customer  [txtworld]  = "sampletext" 
+(evtCustomerEmitter) = "getCustomerDetails($event )" 
+[customerSampleDetails] = "customerSampleData"
+></app-customer>
 
-<app-customers></app-customers>
+<app-customers 
+[customerInputInfo] = "customerDetails" 
+(sampleDataEmitter) = "takeSampleDatafunc($event)"></app-customers>
+
+<!-- //similar what we have added above in appcustomer -->
+<!-- <input 
+[text] = "name";
+(keypess) = "onkeypress()" -->
 
 
 </div>

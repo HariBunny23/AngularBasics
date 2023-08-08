@@ -1,13 +1,10 @@
-
-<div   
+<!-- <div   
   class="container"
   style="margin: 30px; padding: 50px; background-color: lightgreen"
 >
 <h3>Cusomers Details page.(Customers details component)</h3>
+</div> -->
 
-</div>
-
-<!-- 
 <div
   class="container"
   style="margin: 30px; padding: 50px; background-color: lightgreen">
@@ -15,17 +12,19 @@
     <h3>Cusomers Details page.(Customers details component)</h3>
     <div>
       <ul class="list-group">
-        <li class="list-group-item" *ngFor="let item of customerInfo">
+        <li class="list-group-item">
           <div class="row">
             <div class="col-4">
-              {{ item.name }} {{ item.password }} {{ item.location }}  {{item.emailID}}
-            </div>
-            <div class="col-1">
-              <button class="btn btn-success">Edit</button>
-            </div>
+              {{customerInputInfo.name}}
+              {{customerInputInfo.password}}
+              {{customerInputInfo.location}}
+             </div>  
           </div>
         </li>
       </ul>
     </div>
+    <div class="col-1">
+      <button class="btn btn-success" (click) = "submitData()" >Sample data</button>
+    </div>
   </div>
-</div> -->
+</div>

@@ -1,4 +1,9 @@
-import { Component,ElementRef,ViewChild,Input } from "@angular/core";
+import { Component,
+    ElementRef,
+    ViewChild,
+    Input,
+    Output,
+    EventEmitter } from "@angular/core";
 
 
 // @Component({
@@ -28,7 +33,13 @@ export class CustomerComponent{
 
 
 @Input() txtworld : any;
+@Input() customerSampleDetails : any = {};
+// export the data to the parent component 
+@Output() evtCustomerEmitter = new EventEmitter<any>();
+//event emitter is a kind of method which accepts any kind of data and inject the data to the parent component
 
+//emit or inject
+//eventemitter - 
 
 
 evtclick(){
@@ -47,6 +58,12 @@ evtclick(){
 
     //console.log("clicked");
     console.log(customerInfo);
+
+    // @Output() evtCustomerEmitter = new EventEmitter<any>();
+    this.evtCustomerEmitter.emit(customerInfo);
+
+
+
 }
 
 
